@@ -69,7 +69,7 @@ class App extends React.Component {
     if (dias < 0) dias = 0;
     this.setState({ dias: dias });
     let response = "SIIIIIIII";
-    let noResponses = ["Nop", "Nopi", "No aun", "Algun día", "Ni de cerca ajjaja", "No", "Nouu", "Intenta mañana lol", "Siiiiii, Wait.. No :((", "Ya se me acabaron las ideas pero todavia no jajajaja"];
+    let noResponses = ["Nop", "Nopi", "No aun", "Algun día", "Ni de cerca ajjaja", "No", "Nouu", "Intenta mañana lol", "Siiiiii, Wait.. No :(("];
     if (dias !== 0) response = noResponses[Math.floor(Math.random() * noResponses.length)];
 
     axios.get('https://controlasistenciacooler.herokuapp.com/covid/')
@@ -96,12 +96,14 @@ class App extends React.Component {
         {this.state.alert && <UncontrolledAlert color="info">
       Desde ahora tu mensaje sera visible por el MUNDO (osea los que se metan a la pagina xD)
     </UncontrolledAlert>}
+        <h1 style={{paddingTop:"1em"}}>Puedo salir a la calle?</h1>
         <h1 className="title">{this.state.response}</h1>
         <div className="marginado">
-          <p>Dias {this.state.dias}</p>
-          <p >Horas {this.state.horas}</p>
-          <p >Minutos  {this.state.minutos}</p>
-          <p >Segundos  {this.state.segundos}</p>
+          <p>Tiempo de cuarentena restante:</p>
+          <p>{this.state.dias} dias</p>
+          <p >{this.state.horas} horas</p>
+          <p >{this.state.minutos} minutos</p>
+          <p >{this.state.segundos} segundos</p>
         </div>
         <div className="splashSection">
           <Form >
