@@ -65,7 +65,7 @@ class App extends React.Component {
     this.setState({ Splashes: arrayFixed })
   }
   componentDidMount() {
-    let dias = 127 - dia; //127 ->6 de mayo
+    let dias = 120 - dia; //127 ->29 de abril
     if (dias < 0) dias = 0;
     this.setState({ dias: dias });
     let response = "SIIIIIIII";
